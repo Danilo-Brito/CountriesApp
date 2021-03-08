@@ -9,9 +9,9 @@ import java.util.List;
 import dbrito.com.br.countriesapp.model.CountryModel;
 
 public class ListViewModel extends ViewModel {
-    public MutableLiveData<List<CountryModel>> countries = new MutableLiveData<List<CountryModel>>();
-    public MutableLiveData<Boolean> countryLoadError = new MutableLiveData<Boolean>();
-    public MutableLiveData<Boolean> loading = new MutableLiveData<Boolean>();
+    public MutableLiveData<List<CountryModel>> countries = new MutableLiveData<>();
+    public MutableLiveData<Boolean> countryLoadError = new MutableLiveData<>();
+    public MutableLiveData<Boolean> loading = new MutableLiveData<>();
     //LiveData is objects observable that generates async values
 
     public void refresh(){
@@ -24,9 +24,6 @@ public class ListViewModel extends ViewModel {
         CountryModel country3 = new CountryModel("Czechia", "Praha", "");
 
         List<CountryModel> list = new ArrayList<>();
-        list.add(country1);
-        list.add(country2);
-        list.add(country3);
         list.add(country1);
         list.add(country2);
         list.add(country3);
