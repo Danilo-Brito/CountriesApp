@@ -22,7 +22,7 @@ public class CountriesService {
 
     private CountriesService(){}
 
-    private static CountriesService getInstance(){
+    public static CountriesService getInstance(){
         if (instance == null){
             instance = new CountriesService();
         }
