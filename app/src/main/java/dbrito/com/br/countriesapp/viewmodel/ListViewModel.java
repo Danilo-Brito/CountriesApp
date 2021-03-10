@@ -5,6 +5,9 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import dbrito.com.br.countriesapp.di.DaggerApiComponent;
 import dbrito.com.br.countriesapp.model.CountriesService;
 import dbrito.com.br.countriesapp.model.CountryModel;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -19,9 +22,15 @@ public class ListViewModel extends ViewModel {
     public MutableLiveData<Boolean> loading = new MutableLiveData<>();
     //LiveData is objects observable that generates async values
 
-    private CountriesService countriesService = CountriesService.getInstance();
+    @Inject
+    public CountriesService countriesService;
 
     private CompositeDisposable disposable = new CompositeDisposable();
+
+    public ListViewModel(){
+        super();
+        DaggerApiComponent.create().inject(this);
+    }
 
     public void refresh(){
         fetchCountries();

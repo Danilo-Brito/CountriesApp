@@ -1,26 +1,21 @@
 package dbrito.com.br.countriesapp.view;
 
-import androidx.activity.OnBackPressedDispatcherOwner;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import dbrito.com.br.countriesapp.R;
-import dbrito.com.br.countriesapp.model.CountryModel;
 import dbrito.com.br.countriesapp.viewmodel.ListViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar loagindView;
 
     private ListViewModel viewModel;
-    private  CountryListAdapter adapter = new CountryListAdapter(new ArrayList<>());
+    private CountryListAdapter adapter = new CountryListAdapter(new ArrayList<>());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,22 +58,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void observerViewModel() {
         viewModel.countries.observe(this, countryModels -> {
-            if (countryModels != null){
+            if (countryModels != null) {
                 countriesList.setVisibility(View.VISIBLE);
                 adapter.updateCountries(countryModels);
             }
         });
 
         viewModel.countryLoadError.observe(this, isError -> {
-            if (isError != null){
+            if (isError != null) {
                 listError.setVisibility(isError ? View.VISIBLE : View.GONE);
             }
         });
 
         viewModel.loading.observe(this, isLoading -> {
-            if (isLoading != null){
+            if (isLoading != null) {
                 loagindView.setVisibility(isLoading ? View.VISIBLE : View.GONE);
-                if (isLoading){
+                if (isLoading) {
                     listError.setVisibility(View.GONE);
                     countriesList.setVisibility(View.GONE);
                 }
