@@ -69,7 +69,7 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
 
     testImplementation "org.mockito:mockito-inline:$mockitoVersion"
-    testImplementation "android.arch.core:core-testing:1.1.1"
+    testImplementation "android.arch.core:core-testing:2.1.0"
 
 
     testImplementation 'junit:junit:4.+'
