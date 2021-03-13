@@ -1,7 +1,7 @@
 <h1 align="center"> Countries </h1>
 
 <div align="center">
-App that list countries using the latest Android technologies: Dagger2, MVVM, Java, RxJava, Retrofit, Mockito and Glide.
+App that list countries using the latest Android technologies: Dagger2, MVVM, Java, RxJava, Retrofit, ButterKnife, Mockito and Glide.
 </div>
 </br>
 
@@ -28,6 +28,9 @@ App that list countries using the latest Android technologies: Dagger2, MVVM, Ja
 </div>
 <div>
 <li><a>Retrofit</a></li>
+</div>
+<div>
+<li><a>ButterKnife</a></li>
 </div>
 <div>
 <li><a>Mockito</a></li>
